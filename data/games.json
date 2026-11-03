@@ -1,1 +1,14 @@
-
+[
+ {"id":"choushazai","title":"超謝罪会見","description":"謝っただけなのに、宇宙規模。","genre":"カオス","image":"","url":"","releaseDate":"","status":"published"},
+ {"id":"osuna_botan","title":"押すなって言っただろ！","description":"押すなと言われたら、押したくなる。","genre":"カジュアル","image":"","url":"","releaseDate":"","status":"published"},
+ {"id":"slot_bakuhatu","title":"スロットを爆発せよ！","description":"スロット台を爆発させろ！","genre":"リズム","image":"","url":"","releaseDate":"","status":"published"},
+ {"id":"darekakuru","title":"23:59、誰かが来る。","description":"その時間、何かが起きる。","genre":"ホラー","image":"","url":"","releaseDate":"","status":"published"},
+ {"id":"ashiato_sanpo","title":"あしあとさんぽ","description":"足あとを残して、のんびりおさんぽ。","genre":"癒やし","image":"","url":"","releaseDate":"","status":"published"},
+ {"id":"oturi_ikura","title":"お釣りいくら？","description":"お釣りを素早く計算しよう！","genre":"パズル","image":"","url":"","releaseDate":"","status":"published"},
+ {"id":"kanji_ohajiki","title":"漢字おはじき","description":"漢字の力でおはじき勝負！","genre":"対戦","image":"","url":"","releaseDate":"","status":"published"},
+ {"id":"gohan_mada","title":"ごはんまだ！","description":"ごはんを待つ時間も大騒ぎ。","genre":"カオス","image":"","url":"","releaseDate":"","status":"published"},
+ {"id":"unko_interview","title":"うんこ面接","description":"こんな面接、聞いてない！","genre":"カオス","image":"","url":"","releaseDate":"","status":"published"},
+ {"id":"nazonazo_houkai","title":"なぞなぞ崩壊","description":"なぞなぞの常識が崩壊する。","genre":"パズル","image":"","url":"","releaseDate":"","status":"published"},
+ {"id":"oekaki","title":"おえかき砲！","description":"描いて、撃って、ぶっ飛ばせ！","genre":"アクション","image":"","url":"","releaseDate":"","status":"published"},
+ {"id":"iwa","title":"岩、デカすぎ。","description":"巨大な岩をひたすら砕け！","genre":"カジュアル","image":"","url":"","releaseDate":"","status":"published"}
+]
