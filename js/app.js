@@ -7,6 +7,36 @@ function card(g,rank){const idx=Math.max(0,games.findIndex(x=>x.id===g.id)),p=co
 function renderRanking(){const root=$('#ranking');root.replaceChildren();const chosen=ranks.map(id=>games.find(g=>g.id===id)).filter(g=>g&&published(g)).slice(0,5);if(!chosen.length){root.append(el('div','notice','注目TOP5は未登録です。ranking.json にゲームIDを設定すると表示されます。'));return}chosen.forEach((g,i)=>root.append(card(g,i+1)))}
 function renderFilters(){const root=$('#filters');root.replaceChildren();const genres=['すべて',...new Set(games.filter(published).map(g=>g.genre||'未分類'))];if(!genres.includes(active))active='すべて';genres.forEach(g=>{const b=el('button','filter'+(g===active?' active':''),g);b.type='button';b.setAttribute('aria-pressed',String(g===active));b.onclick=()=>{active=g;renderFilters();renderGames()};root.append(b)})}
 function renderGames(){const root=$('#grid');root.replaceChildren();let arr=games.filter(published).filter(g=>(active==='すべて'||(g.genre||'未分類')===active)&&((g.title||'')+' '+(g.description||'')).toLocaleLowerCase().includes(term));const mode=$('#sort').value;if(mode==='name')arr.sort((a,b)=>a.title.localeCompare(b.title,'ja'));if(mode==='new')arr.sort((a,b)=>(date(b)?.getTime()||0)-(date(a)?.getTime()||0));if(mode==='popular')arr.sort((a,b)=>(ranks.indexOf(a.id)<0?999:ranks.indexOf(a.id))-(ranks.indexOf(b.id)<0?999:ranks.indexOf(b.id)));if(!arr.length)root.append(el('div','empty','該当するゲームがありません。検索条件を変更してください。'));else arr.forEach(g=>root.append(card(g)));$('#games .count')?.remove()}
-async function load(){try{const [gr,rr]=await Promise.all([fetch('data/games.json',{cache:'no-store'}),fetch('data/ranking.json',{cache:'no-store'})]);if(!gr.ok||!rr.ok)throw Error('fetch');games=await gr.json();const r=await rr.json();ranks=Array.isArray(r.featuredGameIds)?r.featuredGameIds:[];renderRanking();renderFilters();renderGames()}catch(e){$('#ranking').append(el('div','notice','データを読み込めませんでした。GitHub PagesなどのWebサーバーで開いてください。'));$('#grid').append(el('div','notice','ゲーム一覧の読み込みに失敗しました。'))}}
+
+// 自動TOP5: Cloudflareの30日プレイ数があるゲームを優先し、残りを手動TOP5で補完。
+// URL未設定・非公開・一覧に存在しないID（例: asobeat_test）は対象外。
+async function fetchJson(url,timeoutMs=5000){
+  const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),timeoutMs);
+  try{const res=await fetch(url,{cache:'no-store',signal:controller.signal});if(!res.ok)throw new Error('HTTP '+res.status);return await res.json()}
+  finally{clearTimeout(timer)}
+}
+async function loadAutomaticRanking(manualRanks){
+  try{
+    const config=await fetchJson('data/config.json');
+    const base=typeof config?.apiBase==='string'?config.apiBase.trim().replace(/\/+$/,''):'';
+    if(!/^https:\/\//i.test(base))return;
+    const api=await fetchJson(base+'/ranking');
+    if(!Array.isArray(api?.top))return;
+    const allowed=new Set(games.filter(g=>published(g)&&hasUrl(g)).map(g=>g.id));
+    const candidates=api.top.filter(row=>row&&typeof row.id==='string'&&allowed.has(row.id)&&Number.isFinite(Number(row.plays))&&Number(row.plays)>0);
+    candidates.sort((a,b)=>Number(b.plays)-Number(a.plays)||a.id.localeCompare(b.id));
+    const ids=[];
+    for(const row of candidates){if(!ids.includes(row.id))ids.push(row.id);if(ids.length===5)break}
+    for(const id of manualRanks){if(allowed.has(id)&&!ids.includes(id))ids.push(id);if(ids.length===5)break}
+    // ゲームが5件以上ある場合は、自動順位・手動順位にない作品も補完。
+    for(const g of games){if(published(g)&&hasUrl(g)&&!ids.includes(g.id))ids.push(g.id);if(ids.length===5)break}
+    if(!ids.length)return;
+    ranks=ids;renderRanking();if($('#sort').value==='popular')renderGames();
+  }catch(err){
+    // API未接続・通信障害でも、最初に表示した手動TOP5はそのまま残す。
+    console.info('ASOBEAT: manual TOP5 fallback',err?.message||err);
+  }
+}
+async function load(){try{const [gr,rr]=await Promise.all([fetch('data/games.json',{cache:'no-store'}),fetch('data/ranking.json',{cache:'no-store'})]);if(!gr.ok||!rr.ok)throw Error('fetch');games=await gr.json();const r=await rr.json();ranks=Array.isArray(r.featuredGameIds)?r.featuredGameIds:[];renderRanking();renderFilters();renderGames();void loadAutomaticRanking([...ranks])}catch(e){$('#ranking').append(el('div','notice','データを読み込めませんでした。GitHub PagesなどのWebサーバーで開いてください。'));$('#grid').append(el('div','notice','ゲーム一覧の読み込みに失敗しました。'))}}
 $('#search').addEventListener('input',e=>{term=e.target.value.trim().toLocaleLowerCase();renderGames()});$('#sort').addEventListener('change',renderGames);load();
 })();
