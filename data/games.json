@@ -15,7 +15,7 @@
     "description": "押すなと言われたら、押したくなる。",
     "genre": "カジュアル",
     "image": "",
-    "url": "",
+    "url": "https://asobeatapps-ops.github.io/osuna_botan/",
     "releaseDate": "",
     "status": "published"
   },
@@ -25,7 +25,7 @@
     "description": "スロット台を爆発させろ！",
     "genre": "リズム",
     "image": "",
-    "url": "",
+    "url": "https://asobeatapps-ops.github.io/slot_bakuhatu/",
     "releaseDate": "",
     "status": "published"
   },
@@ -40,22 +40,12 @@
     "status": "draft"
   },
   {
-    "id": "ashiato_sanpo",
-    "title": "あしあとさんぽ",
-    "description": "足あとを残して、のんびりおさんぽ。",
-    "genre": "癒やし",
-    "image": "",
-    "url": "",
-    "releaseDate": "",
-    "status": "published"
-  },
-  {
     "id": "oturi_ikura",
     "title": "お釣りいくら？",
     "description": "お釣りを素早く計算しよう！",
     "genre": "パズル",
     "image": "",
-    "url": "",
+    "url": "https://asobeatapps-ops.github.io/oturi_ikura/",
     "releaseDate": "",
     "status": "published"
   },
@@ -65,7 +55,7 @@
     "description": "漢字の力でおはじき勝負！",
     "genre": "対戦",
     "image": "",
-    "url": "",
+    "url": "https://asobeatapps-ops.github.io/kanji_ohajiki/",
     "releaseDate": "",
     "status": "published"
   },
@@ -75,7 +65,7 @@
     "description": "ごはんを待つ時間も大騒ぎ。",
     "genre": "カオス",
     "image": "",
-    "url": "",
+    "url": "https://asobeatapps-ops.github.io/gohan_mada/",
     "releaseDate": "",
     "status": "published"
   },
@@ -95,7 +85,7 @@
     "description": "なぞなぞの常識が崩壊する。",
     "genre": "パズル",
     "image": "",
-    "url": "",
+    "url": "https://asobeatapps-ops.github.io/nazonazo_houkai/",
     "releaseDate": "",
     "status": "published"
   },
