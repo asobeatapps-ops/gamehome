@@ -4,7 +4,7 @@
     "title": "超謝罪会見",
     "description": "謝っただけなのに、宇宙規模。",
     "genre": "カオス",
-    "image": "",
+    "image": "assets/gameplay/choushazai.jpg",
     "url": "https://asobeatapps-ops.github.io/choushazai/",
     "releaseDate": "",
     "status": "published"
@@ -14,7 +14,7 @@
     "title": "押すなって言っただろ！",
     "description": "押すなと言われたら、押したくなる。",
     "genre": "カジュアル",
-    "image": "",
+    "image": "assets/gameplay/osuna_botan.jpg",
     "url": "https://asobeatapps-ops.github.io/osuna_botan/",
     "releaseDate": "",
     "status": "published"
@@ -24,7 +24,7 @@
     "title": "スロットを爆発せよ！",
     "description": "スロット台を爆発させろ！",
     "genre": "リズム",
-    "image": "",
+    "image": "assets/gameplay/slot_bakuhatu.jpg",
     "url": "https://asobeatapps-ops.github.io/slot_bakuhatu/",
     "releaseDate": "",
     "status": "published"
@@ -44,7 +44,7 @@
     "title": "お釣りいくら？",
     "description": "お釣りを素早く計算しよう！",
     "genre": "パズル",
-    "image": "",
+    "image": "assets/gameplay/oturi_ikura.jpg",
     "url": "https://asobeatapps-ops.github.io/oturi_ikura/",
     "releaseDate": "",
     "status": "published"
@@ -54,7 +54,7 @@
     "title": "漢字おはじき",
     "description": "漢字の力でおはじき勝負！",
     "genre": "対戦",
-    "image": "",
+    "image": "assets/gameplay/kanji_ohajiki.jpg",
     "url": "https://asobeatapps-ops.github.io/kanji_ohajiki/",
     "releaseDate": "",
     "status": "published"
@@ -64,7 +64,7 @@
     "title": "ごはんまだ！",
     "description": "ごはんを待つ時間も大騒ぎ。",
     "genre": "カオス",
-    "image": "",
+    "image": "assets/gameplay/gohan_mada.jpg",
     "url": "https://asobeatapps-ops.github.io/gohan_mada/",
     "releaseDate": "",
     "status": "published"
@@ -84,7 +84,7 @@
     "title": "なぞなぞ崩壊",
     "description": "なぞなぞの常識が崩壊する。",
     "genre": "パズル",
-    "image": "",
+    "image": "assets/gameplay/nazonazo_houkai.jpg",
     "url": "https://asobeatapps-ops.github.io/nazonazo_houkai/",
     "releaseDate": "",
     "status": "published"
