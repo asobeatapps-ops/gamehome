@@ -108,5 +108,15 @@
     "url": "",
     "releaseDate": "",
     "status": "draft"
+  },
+  {
+    "id": "rejibukuro_iranai",
+    "title": "レジ袋いりません。",
+    "description": "レジ袋を断ったら大騒ぎ。商品を両腕で積み上げよう！",
+    "genre": "アクション",
+    "image": "assets/gameplay/rejibukuro_iranai.jpg",
+    "url": "https://asobeatapps-ops.github.io/rejibukuro_iranai/",
+    "releaseDate": "2026-11-14",
+    "status": "published"
   }
 ]
