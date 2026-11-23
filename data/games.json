@@ -118,5 +118,15 @@
     "url": "https://asobeatapps-ops.github.io/rejibukuro_iranai/",
     "releaseDate": "2026-11-14",
     "status": "published"
+  },
+  {
+    "id": "jouhou_moresugi",
+    "title": "情報、漏れすぎ。",
+    "description": "オフィスを触っただけなのに大騒ぎ。17の結末を探そう！",
+    "genre": "カオス",
+    "image": "assets/gameplay/jouhou_moresugi.jpg",
+    "url": "https://asobeatapps-ops.github.io/jouhou_moresugi/",
+    "releaseDate": "2026-11-19",
+    "status": "published"
   }
 ]

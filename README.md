@@ -34,3 +34,7 @@ AdSenseは申請中です。`index.html` のheadにはパブリッシャーID `c
 `ads.txt` は、ルート用リポジトリ `asobeatapps-ops/asobeatapps-ops.github.io` で管理します。公開先は https://asobeatapps-ops.github.io/ads.txt です。`/gamehome/ads.txt` に複製しないでください。
 
 審査結果・所有権確認・ads.txtの認識状態はAdSense管理画面で確認します。サイト側の整備は合格を保証しません。広告配信を始める前に、対象地域や広告設定に応じた同意管理とポリシーの整合性を確認してください。
+
+## 情報、漏れすぎ。カード（2026-11-23）
+
+`data/games.json`に`jouhou_moresugi`を追加。公開URLは`https://asobeatapps-ops.github.io/jouhou_moresugi/`。`assets/gameplay/jouhou_moresugi.jpg`は実際のオフィス探索画面のCanvasを撮影したものです。既存のゲーム情報、検索・並べ替え・TOP5・API設定・広告枠は変更していません。
