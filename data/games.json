@@ -128,5 +128,15 @@
     "url": "https://asobeatapps-ops.github.io/jouhou_moresugi/",
     "releaseDate": "2026-11-19",
     "status": "published"
+  },
+  {
+    "id": "nou_checker",
+    "title": "脳内チェッカー",
+    "description": "名前を入れるだけで脳内の欲望が丸見え！21種類の称号を集めよう。",
+    "genre": "カオス",
+    "image": "https://asobeatapps-ops.github.io/nou_checker/assets/images/ogp.png",
+    "url": "https://asobeatapps-ops.github.io/nou_checker/",
+    "releaseDate": "2026-11-25",
+    "status": "published"
   }
 ]
